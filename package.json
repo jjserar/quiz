@@ -1,0 +1,20 @@
+{
+  "name" : "quiz",
+  "version" : "0.0.1",
+  "main" : "./",
+  "author" : {
+    "name" : "juanjo",
+    "email" : "inet.swor@gmail.com"
+  },
+  "keywords" : [ ],
+  "licenses" : {
+    "type" : "mit"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/YOUR_LOGIN/quiz.git"
+  },
+  "bugs" : {
+    "url" : "null"
+  }
+}
