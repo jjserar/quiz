@@ -16,5 +16,8 @@
   },
   "bugs" : {
     "url" : "null"
+  },
+  "license" : {
+    "type" : "mit"
   }
 }
