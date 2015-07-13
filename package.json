@@ -1,23 +1,26 @@
 {
-  "name" : "quiz",
-  "version" : "0.0.1",
-  "main" : "./",
-  "author" : {
-    "name" : "juanjo",
-    "email" : "inet.swor@gmail.com"
+  "name": "quiz",
+  "version": "0.0.1",
+  "main": "./",
+  "author": {
+    "name": "juanjo",
+    "email": "inet.swor@gmail.com"
   },
-  "keywords" : [ ],
-  "licenses" : {
-    "type" : "mit"
+  "keywords": [],
+  "licenses": {
+    "type": "mit"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/YOUR_LOGIN/quiz.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jjserar/quiz.git"
   },
-  "bugs" : {
-    "url" : "null"
+  "bugs": {
+    "url": "null"
   },
-  "license" : {
-    "type" : "mit"
+  "license": {
+    "type": "mit"
+  },
+  "dependencies": {
+    "express-partials": "^0.3.0"
   }
 }
