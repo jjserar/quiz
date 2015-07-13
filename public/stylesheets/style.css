@@ -21,7 +21,8 @@ p {
         margin-bottom: 1px;
         color: black;
     }
-
+#av1 { max-height: 100px; vertical-align: middle;}
+#question { padding: 40px 0;}
 section > div {
     padding: 20px;
 }
