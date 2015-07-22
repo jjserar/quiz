@@ -10,7 +10,11 @@ body {
 p {
     margin: 1em 0;
 }
-
+table#quizes {
+    width: 100%;
+    margin-top: 40px;
+    
+}
 #page-wrap {
     margin: 2% auto;
     color: white;
@@ -23,6 +27,10 @@ p {
     }
 #av1 { max-height: 100px; vertical-align: middle;}
 #question { padding: 40px 0;}
+section {
+    height: 250px;
+    overflow: hidden;
+}
 section > div {
     padding: 20px;
 }
