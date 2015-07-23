@@ -6,7 +6,10 @@ body {
 #page-wrap:after {
     content: "Smartphone Layout";
 }
-
+section {height: 1%; }
+section > div {
+    padding: 10px;
+}
 h2 span, section h3 {
     display: none;
 }

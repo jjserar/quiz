@@ -1,5 +1,18 @@
+<div>
 <table id="quizes">
+    
 <% var i; for (i=0; i < quizes.length; i++) { %>
     <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td></tr>
+<% }
+if (quizes.length <= 0) {
+%>
+    <tr><td>No se hallaron coincidencias. Cambie el criterio de búsqueda y pruebe de nuevo</td></tr>
 <% } %>
+    <tr><td>
+        <form id="quizsearch" method="get" action="/quizes">
+            <input type="text" name="search">&nbsp;
+            <input type="submit" value="Buscar">
+        </form>
+    </td></tr>
 </table>
+</div>
