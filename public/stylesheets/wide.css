@@ -6,6 +6,9 @@ body {
     content: "Wide Layout";
     }
 div#wideTable { display: table; width: 100%;}
+td.accion {
+    width: 5% !important;
+}
 nav {
     display: table-cell;
     vertical-align: middle;

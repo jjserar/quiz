@@ -1,13 +1,14 @@
 <div>
 <table id="quizes">
-    <tr>
-        <td><a href="/quizes/new"><button type="button">Crear pregunta</button></a></td>
-        <td>&nbsp;</td>
-    </tr>
 <% var i; for (i=0; i < quizes.length; i++) { %>
     <tr>
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td>
-        <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a>
+        <td class="accion"><a title="Editar" href="quizes/<%= quizes[i].id %>/edit"><button class="btEdit">&nbsp;</button></a></td>
+        <td class="accion">
+            <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+                <button type="submit" class="btDelete" title="Eliminar" onclick="return confirm('Borrar <%= quizes[i].pregunta %>?');">&nbsp;</button>
+            </form>
+        </td>
     </tr>
 <% }    
 if (quizes.length <= 0) { %>
@@ -16,10 +17,10 @@ if (quizes.length <= 0) { %>
     <tr>
         <td>
             <form id="quizsearch" method="get" action="/quizes">
-                <input type="text" name="search"><input type="submit" class="btSearch" value="&nbsp;">
+                <input type="text" name="search"><input type="submit" class="btSearch" title="Buscar" value="&nbsp;">
             </form>
         </td>
-        <td>&nbsp;</td>
+        <td colspan="2"><a title="Crear pregunta" href="/quizes/new"><button class="btNew">&nbsp;</button></a></td>
     </tr>
 </table>
 </div>
