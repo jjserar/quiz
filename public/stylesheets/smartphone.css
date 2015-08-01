@@ -1,6 +1,6 @@
 body {
     background: #333;
-    font-size: xx-large;
+    font-size: 150%;
 }
 
 #page-wrap:after {
@@ -10,10 +10,11 @@ section {height: 1%; }
 section > div {
     padding: 10px;
 }
+.rem { display:none; }
 h2 span, section h3 {
     display: none;
 }
 
-footer, input {
+footer {
     font-size: large;
 }

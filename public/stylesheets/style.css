@@ -13,28 +13,26 @@ p {
 table#quizes {
     width: 100%;
     border-collapse: collapse;
+    font-size: 100%;
 }
 table#quizes td { padding: 10px 0;}
 #page-wrap {
     margin: 2% auto;
     color: white;
+    min-height: 250px;
     }
-    #page-wrap > .main {
-        border: 1px solid #999;
-        padding: 1%;
-        margin-bottom: 1px;
-        color: black;
+ .main {
+    border: 1px solid #999;
+    padding: 1%;
+    margin-bottom: 1px;
+    color: black;
     }
+    .main > div {
+        padding: 40px;
+        }
 #av1 { max-height: 100px; vertical-align: middle;}
 
-section {
-    height: 250px;
-    overflow: hidden;
-    
-}
-section > div {
-    padding: 40px;
-}
+
 
 header, nav, section, footer {
     background: #eee; text-align: center;
@@ -43,3 +41,4 @@ header, nav, section, footer {
 nav span {
     margin: 0px 10px 0px 0px;
 }
+button, input[type="text"], input[type="submit"] { padding: .5em; }

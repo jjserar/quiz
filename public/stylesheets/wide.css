@@ -1,26 +1,26 @@
 body {
     background: #999;
+    
 }
-
 #page-wrap:after {
     content: "Wide Layout";
-}
-
+    }
+div#wideTable { display: table; width: 100%;}
 nav {
-    float: left;
-    width: 15%;
-    height: 250px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 20%;
     }
     nav span {
         /*margin:0px 100px 0px 0px;*/
         display: block;
+        margin: 1em 0;
         width: 100%;
         text-align: center;
     }
-section {
-    float: right;
+section.main {
+    display: table-cell;
     width: 80%;
-    
 }
     
 footer {
