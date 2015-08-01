@@ -46,7 +46,7 @@ header, nav, section, footer {
 nav span {
     margin: 0px 10px 0px 0px;
 }
-div#create {
+div#RESTform {
     width: 50%;
     margin: auto;
 }
@@ -58,4 +58,9 @@ div.field label {
     display: block;
 }
 
-button, input[type="text"], input[type="submit"] { padding: .5em; }
+button, input[type="text"], input[type="submit"] { padding: .5em; margin: .2em 0;}
+.btSearch {
+    background: url(/images/lupa.png) center center no-repeat;
+    border: none;
+    width: 34px;
+}

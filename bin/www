@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 // Cargamos variables de entorno del fichero .env (sólo para node)
-/*
+
 var env = require('node-env-file');
 env('../.env');
-*/
+
 
 /**
  * Module dependencies.

@@ -1,21 +1,25 @@
 <div>
 <table id="quizes">
-    
+    <tr>
+        <td><a href="/quizes/new"><button type="button">Crear pregunta</button></a></td>
+        <td>&nbsp;</td>
+    </tr>
 <% var i; for (i=0; i < quizes.length; i++) { %>
-    <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td></tr>
-<% }
-if (quizes.length <= 0) {
-%>
-    <tr><td>No se hallaron coincidencias. Cambie el criterio de búsqueda y pruebe de nuevo</td></tr>
+    <tr>
+        <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td>
+        <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a>
+    </tr>
+<% }    
+if (quizes.length <= 0) { %>
+    <tr><td colspan="2">No se hallaron coincidencias. Cambie el criterio de búsqueda y pruebe de nuevo</td></tr>
 <% } %>
-    <tr><td>
-        <form id="quizsearch" method="get" action="/quizes">
-            <input type="text" name="search">&nbsp;
-            <input type="submit" value="Buscar">
-        </form>
-    </td></tr>
-    <tr><td>
-        <a href="/quizes/new"><button type="button">Crear pregunta</button></a>
-    </td></tr>
+    <tr>
+        <td>
+            <form id="quizsearch" method="get" action="/quizes">
+                <input type="text" name="search"><input type="submit" class="btSearch" value="&nbsp;">
+            </form>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
 </table>
 </div>

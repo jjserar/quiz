@@ -71,4 +71,34 @@ exports.create = function(req, res) {
     }
   );
  };
+ 
+ //GET /quizes/:id/edit
+ exports.edit = function(req, res) {
+     var quiz = req.quiz;       //ver autoload
+     res.render('quizes/edit', {quiz: quiz, errors: []});
+ };
+ 
+ //PUT /quizes/:id/update
+ exports.update = function(req, res) {
+     var quiz = req.quiz;       //ver autoload
+     
+     quiz.pregunta = req.body.quiz.pregunta;
+     quiz.respuesta = req.body.quiz.respuesta;
+     
+     quiz.validate().then(
+        function(err) {
+        if(err) {
+            //err.errors matriz de errores
+            res.render('quizes/edit', {quiz: quiz, errors: err.errors});
+        } else {
+           //guardar en la BDD los campos pregunta y respuesta de Quiz
+            //(limitamos el guardado únicamente a esos dos campos)
+            quiz.save({fields: ["pregunta", "respuesta"]}).then(function() {
+                res.redirect('/quizes');  //redirección a lista de preguntas
+            }); 
+        }
+    }
+  );
+ };
+ 
 
