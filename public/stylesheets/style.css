@@ -31,7 +31,12 @@ table#quizes td { padding: 10px 0;}
         padding: 40px;
         }
 #av1 { max-height: 100px; vertical-align: middle;}
-
+#ErrorMsgs { 
+    color:#f00;
+    font-size: smaller;
+    background-color: #ffcccc;
+    display: block;
+}
 
 
 header, nav, section, footer {
@@ -41,4 +46,16 @@ header, nav, section, footer {
 nav span {
     margin: 0px 10px 0px 0px;
 }
+div#create {
+    width: 50%;
+    margin: auto;
+}
+div.field {
+    margin: .4em 0;
+    }
+div.field label {
+    padding: .5em;
+    display: block;
+}
+
 button, input[type="text"], input[type="submit"] { padding: .5em; }
