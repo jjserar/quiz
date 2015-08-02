@@ -2,7 +2,7 @@
 <table id="quizes">
 <% var i; for (i=0; i < quizes.length; i++) { %>
     <tr>
-        <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td>
+        <td><span class="tema"><%= quizes[i].tema %></span><br><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></td>
         <td class="accion"><a title="Editar" href="quizes/<%= quizes[i].id %>/edit"><button class="btEdit">&nbsp;</button></a></td>
         <td class="accion">
             <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
@@ -12,7 +12,7 @@
     </tr>
 <% }    
 if (quizes.length <= 0) { %>
-    <tr><td colspan="2">No se hallaron coincidencias. Cambie el criterio de búsqueda y pruebe de nuevo</td></tr>
+    <tr><td colspan="3">No se hallaron coincidencias. Cambie el criterio de búsqueda y pruebe de nuevo</td></tr>
 <% } %>
     <tr>
         <td>

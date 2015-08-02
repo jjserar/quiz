@@ -62,9 +62,9 @@ exports.create = function(req, res) {
             //err.errors matriz de errores
             res.render('quizes/new', {quiz: quiz, errors: err.errors});
         } else {
-           //guardar en la BDD los campos pregunta y respuesta de Quiz
-            //(limitamos el guardado únicamente a esos dos campos)
-            quiz.save({fields: ["pregunta", "respuesta"]}).then(function() {
+           //guardar en la BDD los campos pregunta, respuesta y tema de Quiz
+            //(limitamos el guardado únicamente a esos tres campos)
+            quiz.save({fields: ["pregunta", "respuesta", "tema"]}).then(function() {
                 res.redirect('/quizes');  //redirección a lista de preguntas
             }); 
         }
@@ -84,6 +84,7 @@ exports.create = function(req, res) {
      
      quiz.pregunta = req.body.quiz.pregunta;
      quiz.respuesta = req.body.quiz.respuesta;
+     quiz.tema = req.body.quiz.tema;
      
      quiz.validate().then(
         function(err) {
@@ -91,9 +92,7 @@ exports.create = function(req, res) {
             //err.errors matriz de errores
             res.render('quizes/edit', {quiz: quiz, errors: err.errors});
         } else {
-           //guardar en la BDD los campos pregunta y respuesta de Quiz
-            //(limitamos el guardado únicamente a esos dos campos)
-            quiz.save({fields: ["pregunta", "respuesta"]}).then(function() {
+            quiz.save({fields: ["pregunta", "respuesta", "tema"]}).then(function() {
                 res.redirect('/quizes');  //redirección a lista de preguntas
             }); 
         }

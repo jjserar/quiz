@@ -61,22 +61,30 @@ div.field label {
 button, input[type="text"], input[type="submit"] { padding: .5em; margin: .2em 0;}
 .btSearch, .btEdit, .btDelete, .btNew {
     border: none;
-    width: 32px;
-    height: 32px;
+    
 }
 .btSearch {
     background: url(/images/buscar.png) center center no-repeat;
     background-size: 24px 24px;
+    width: 32px;
+    height: 32px;
 }
 .btEdit {
     background: url(/images/editar.png) center center no-repeat;
-    background-size: 24px 24px;
+    background-size: 16px 16px;
+    width: 18px;
+    height: 18px;
 }
 .btDelete {
     background: url(/images/eliminar.png) center center no-repeat;
-    background-size: 24px 24px;
+    background-size: 16px 16px;
+    width: 18px;
+    height: 18px;
 }
 .btNew {
     background: url(/images/crear.png) center center no-repeat;
     background-size: 24px 24px;
+    width: 32px;
+    height: 32px;
 }
+span.tema { font-size: .8em; color: #ff6600 }
