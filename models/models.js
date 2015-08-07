@@ -28,10 +28,20 @@ var sequelize = new Sequelize(DB_name, user, pwd, {
 });
 
 //Importamos definición de la tabla Quiz
-var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
+var quiz_path = path.join(__dirname, 'quiz');
+var Quiz = sequelize.import(quiz_path);
 
-//Exportamos definición de tabla Quiz
+//Importamos definición de la tabla Comment
+var comment_path = path.join(__dirname, 'comment');
+var Comment = sequelize.import(comment_path);
+
+//Relación entre tablas 1-N (belongsTo, hasMany)
+Comment.belongsTo(Quiz);    // parte 1 de la relación
+Quiz.hasMany(Comment);      // parte n de la relación
+
+//Exportamos definición de tabla Quiz y de Comment
 exports.Quiz = Quiz;
+exports.Comment = Comment;
 
 // Creación BDD y opcionalmente inicialización de la tabla Quiz
 // sync sincroniza las definiciones del modelo con la BDD

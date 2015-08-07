@@ -46,7 +46,7 @@ header, nav, section, footer {
 nav span {
     margin: 0px 10px 0px 0px;
 }
-div#RESTform {
+div.RESTform {
     width: 50%;
     margin: auto;
 }

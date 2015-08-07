@@ -1,0 +1,11 @@
+<div class="RESTform">
+    <p>Añadir comentario:</p>
+    <form method="post" action="/quizes/<%= quizid %>/comments/create">
+        <div class="field">
+            <input type="text" id="comment" name="comment[texto]" value="">
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</div>
