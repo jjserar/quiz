@@ -10,6 +10,17 @@ body {
 p {
     margin: 1em 0;
 }
+.right {
+    display:block;
+    text-align: right;
+}
+#sesionhdr {
+    padding:0; margin:0;
+    font-size: 80%;
+}
+#loginuser {
+    color: #ff6600;
+}
 div#showError {
     font: 12px monospace;
     text-align: left;
@@ -70,7 +81,7 @@ div.field label {
     display: block;
 }
 
-button, input[type="text"], input[type="submit"] { padding: .5em; margin: .2em 0;}
+button, input[type="text"], input[type="submit"], input[type="password"] { padding: .5em; margin: .2em 0;}
 .btSearch, .btEdit, .btDelete, .btNew {
     border: none;
     

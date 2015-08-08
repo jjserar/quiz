@@ -3,6 +3,7 @@ var router = express.Router();
 
 var quizController = require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
+var sessionController = require('../controllers/session_controller');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,6 +27,11 @@ router.param('quizId', function(req, res, next, quizId) {
                 }
         }).catch(function(error) { next(error);});
 });
+
+// Rutas de sesión
+router.get('/login',                        sessionController.new);     // login
+router.post('/login',                       sessionController.create);  // crear sesión
+router.delete('/logout',                    sessionController.destroy); // destruir sesión
 
 router.get('/quizes',                       quizController.index);
 router.get('/quizes/:quizId(\\d+)',         quizController.show);

@@ -17,7 +17,7 @@ exports.create = function(req, res) {
     comment.validate().then(
         function(err) {
             if (err) {
-                res.render('comments/new.ejs', {comment: comment, errors: err.errors});
+                res.render('comments/new.ejs', {quiz: req.quiz, comment: comment, errors: err.errors});
             } else {
                 // guardamos en la bdd
                 comment.save().then(function() {

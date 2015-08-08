@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials');
 var methodOverride = require('method-override');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 
@@ -21,9 +22,27 @@ app.use(partials());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true})); 
-app.use(cookieParser());
+app.use(cookieParser('jjserar_Quiz_2015'));     // añadimos semilla para cifrado de cookie
+app.use(session());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+// middleware de gestión de sesión
+app.use(function(req,res,next){
+    
+    // guardar path el que se encuentra el cliente para regresar a él
+    // cuando se haga login o logout
+    if (!req.path.match(/\/login|\/logout/)) {
+        req.session.redir = req.path;
+    }
+    
+    // para que en las vistas sea visible la información de sesión, la
+    // almacenamos en variable local de res
+    res.locals.session = req.session;
+    next();
+});
 
 app.use('/', routes);
 

@@ -18,6 +18,16 @@
 <body>
 <div id="page-wrap">
     <header class="main" id="h1">
+        <div id="sesionhdr">
+        <% if(!session.user) { %>
+            <span class="right"><a href="/login">Login</a></span>
+        <% } else { %>
+            <span class="right"><span id="loginuser"><%= session.user.username %></span>&nbsp;
+                <form method="post" id="frmlogout" name="frmlogout" action="/logout?_method=delete">
+                    <a href="#" onclick="document.forms.frmlogout.submit()">Logout</a>
+                </form></span>
+        <% } %>
+        </div>
         <h2>Quiz<span>: el juego de las preguntas</span></h2>
     </header>
     <div id="wideTable">
