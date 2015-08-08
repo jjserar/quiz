@@ -10,7 +10,22 @@ router.get('/', function(req, res, next) {
 });
 
 //Si el parámetro quizId existe en la ruta, invoca autoload
-router.param('quizId',                      quizController.load);
+// Autoload - factoriza el código si ruta incluye :quizId
+var models = require('../models/models.js');
+router.param('quizId', function(req, res, next, quizId) {
+    models.Quiz.find({
+        where: { id: Number(quizId) },
+        include: [{ model: models.Comment }]
+        }).then(
+            function(quiz) {
+                if (quiz) {
+                    req.quiz = quiz;
+                    next();
+                } else {
+                    next(new Error('La pregunta ' + quizId + ' no existe'));
+                }
+        }).catch(function(error) { next(error);});
+});
 
 router.get('/quizes',                       quizController.index);
 router.get('/quizes/:quizId(\\d+)',         quizController.show);

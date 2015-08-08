@@ -1,6 +1,7 @@
 <div class="RESTform">
+    <p>Pregunta: <%= quiz.pregunta %></p>
     <p>Añadir comentario:</p>
-    <form method="post" action="/quizes/<%= quizid %>/comments/create">
+    <form method="post" action="/quizes/<%= quiz.id %>/comments/create">
         <div class="field">
             <input type="text" id="comment" name="comment[texto]" value="">
         </div>
