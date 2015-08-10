@@ -33,12 +33,19 @@ div#showError pre {
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
-table#quizes {
+table#quizes, table#comentarios {
     width: 100%;
     border-collapse: collapse;
     font-size: 100%;
 }
-table#quizes td { padding: 10px 0;}
+table#quizes td, table#comentarios td { padding: 10px 0;}
+table#comentarios td { text-align: left; }
+table#comentarios tr:nth-child(odd) {
+   background-color: #E2E2E2;
+}
+.pubdate { color: #333; font-size: 80%; font-style: italic;  }
+.atenuado { color: #ff6600; font-style: italic; font-family: monospace;font-size: 80%;}
+p.comentario { padding-left: .5em; padding-right: .5em; }
 #page-wrap {
     margin: 2% auto;
     color: white;
@@ -82,7 +89,7 @@ div.field label {
 }
 
 button, input[type="text"], input[type="submit"], input[type="password"] { padding: .5em; margin: .2em 0;}
-.btSearch, .btEdit, .btDelete, .btNew {
+.btSearch, .btEdit, .btDelete, .btNew, .btCheck {
     border: none;
     
 }
@@ -109,5 +116,11 @@ button, input[type="text"], input[type="submit"], input[type="password"] { paddi
     background-size: 24px 24px;
     width: 32px;
     height: 32px;
+}
+.btCheck {
+    background: url(/images/check.png) center center no-repeat;
+    background-size: 24px 24px;
+    width: 26px;
+    height: 26px;
 }
 span.tema { font-size: .8em; color: #ff6600 }

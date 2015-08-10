@@ -6,6 +6,8 @@ body {
 #page-wrap:after {
     content: "Smartphone Layout";
 }
+.pubdate { font-size: 50%; }
+p.comentario { font-size: 70% }
 section {height: 1%; }
 section > div {
     padding: 10px;

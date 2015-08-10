@@ -7,7 +7,27 @@
 
 <p><a href="/quizes/<%= quiz.id %>/comments/new"><button>Nuevo comentario</button></a></p>
 <p><strong>Comentarios:</strong></p>
-<% for(i in quiz.Comments) { %>
-    <p>- <%= quiz.Comments[i].texto %></p>
+<table name="comentarios" id="comentarios">
+<% for(i in quiz.Comments) { var bPublicado = quiz.Comments[i].publicado; %>
+  <% if ( bPublicado || session.user ) { %>
+    <tr>
+        <td><span class="pubdate"><%= quiz.Comments[i].createdAt.toLocaleString() %></span>
+    <% if ( session.user && !bPublicado ) { %>
+        <button title="Publicar" class="btCheck" onclick="document.forms.frmPubComment<%= quiz.Comments[i].id %>.submit()"></button>
+        <form name="frmPubComment<%= quiz.Comments[i].id %>" id="frmPubComment<%= quiz.Comments[i].id %>" method="post" action="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[i].id %>/publish?_method=put"></form>
+    <% } %>
+        <p class="comentario">
+        <% if (!bPublicado ) { %>
+        <span class="atenuado">
+        <% } %>
+        <%= quiz.Comments[i].texto %>
+        <% if (!bPublicado ) { %>
+        </span>
+        <% } %>
+        </p>
+        </td>
+    </tr>
+  <% } %>
 <% } %>
+</table>
 </div>

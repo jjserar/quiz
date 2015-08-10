@@ -28,6 +28,9 @@ router.param('quizId', function(req, res, next, quizId) {
         }).catch(function(error) { next(error);});
 });
 
+// Autoload para parámetro commentId
+router.param('commentId',                   commentController.load);
+
 // Rutas de sesión
 router.get('/login',                        sessionController.new);     // login
 router.post('/login',                       sessionController.create);  // crear sesión
@@ -46,8 +49,13 @@ router.delete('/quizes/:quizId(\\d+)',      sessionController.loginRequired, qui
 router.get('/author', function(req,res) {res.render('author',{errors: []});});
 
 //Formulario de creación o modificación de comentario
-router.get('/quizes/:quizId(\\d+)/comments/new',    commentController.new);
+router.get('/quizes/:quizId(\\d+)/comments/new',        commentController.new);
 //Adición del comentario en la bdd
-router.post('/quizes/:quizId(\\d+)/comments/create',       commentController.create);
+router.post('/quizes/:quizId(\\d+)/comments/create',    commentController.create);
+//Publicar comentario (modificar campo publicado)
+router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',
+                                            sessionController.loginRequired, 
+                                            commentController.publish);
+
 
 module.exports = router;

@@ -11,7 +11,8 @@ td.accion {
 }
 nav {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
+    padding-top: 1em;
     width: 20%;
     }
     nav span {
