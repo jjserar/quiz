@@ -1,3 +1,12 @@
+// Middleware de verificación de login
+exports.loginRequired = function(req, res, next) {
+    if (req.session.user) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+};
+
 // GET /login (formulario de inicio de sesión)
 exports.new = function(req, res) {
     var errors = req.session.errors || {};
