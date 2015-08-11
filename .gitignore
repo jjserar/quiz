@@ -2,4 +2,5 @@ node_modules
 bin/quiz.sqlite
 .env
 .nbinfo
+certs
 
