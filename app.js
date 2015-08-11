@@ -28,6 +28,22 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+// Midleware de inactividad de sesión (2 minutos)
+app.use(function(req, res, next) {
+    if (req.session.user) {
+        var t = new Date().getTime();
+        if ( (t - req.session.user.lastActivity) > (120 * 1000)  ) {
+            // la sesión ha expirado
+            delete req.session.user;
+            res.redirect('/login');
+        } else {
+            req.session.user.lastActivity = t;
+            next();
+        }
+    } else {
+        next();
+    }
+});
 
 // middleware de gestión de sesión
 app.use(function(req,res,next){

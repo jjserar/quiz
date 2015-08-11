@@ -34,7 +34,8 @@ exports.create = function(req, res) {
         // la sesión se definirá por la existencia de req.session.user
         req.session.user = {
             id: user,
-            username: user.username
+            username: user.username,
+            lastActivity: new Date().getTime()
         };
         // redireccionamos a la página en la que se encontraba el usuario
         res.redirect(req.session.redir.toString());
