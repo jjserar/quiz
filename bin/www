@@ -1,40 +1,41 @@
 #!/usr/bin/env node
 
 // Cargamos variables de entorno del fichero .env (sólo para node)
-
+/*
 var env = require('node-env-file');
 env('../.env');
 
-
+*/
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
 var debug = require('debug')('quiz:server');
-//var http = require('http');
+var http = require('http');
 var fs = require('fs');
-var https = require('https');
-
+//var https = require('https');
+/*
 var options = {
     key: fs.readFileSync('../certs/quiz-2015-key.pem').toString(),
     cert: fs.readFileSync('../certs/quiz-2015-cert.pem').toString()
 };
+*/
 
 /**
  * Get port from environment and store in Express.
  */
 
-//var port = normalizePort(process.env.PORT || '3000');
-var port = normalizePort(process.env.PORT || '8443');
+var port = normalizePort(process.env.PORT || '3000');
+//var port = normalizePort(process.env.PORT || '8443');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-//var server = http.createServer(app);
-var server = https.createServer(options, app);
+var server = http.createServer(app);
+//var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.

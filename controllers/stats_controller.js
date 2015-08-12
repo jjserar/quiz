@@ -25,7 +25,9 @@ exports.show = function(req, res, next) {
                 // preguntas con y sin comentarios
                 models.Comment.findAll(
                     {
-                        attributes: [[Sequelize.literal('DISTINCT `QuizId`'), 'QuizId']]
+                        // Atención a las dobles comillas con carácter de escape en el literal
+                        // Son necesarias en Postgress para que la consulta funcione como debe
+                        attributes: [[Sequelize.literal("DISTINCT \"QuizId\""), 'QuizId']]
                         
                     }).then(function(m) {
                         stats.quizes_concomments = parseInt(m.length);
