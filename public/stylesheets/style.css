@@ -38,6 +38,7 @@ table#quizes, table#comentarios {
     border-collapse: collapse;
     font-size: 100%;
 }
+table#tableStats { margin: auto; padding: 1em; }
 table#quizes td, table#comentarios td { padding: 10px 0;}
 table#comentarios td { text-align: left; }
 table#comentarios tr:nth-child(odd) {
